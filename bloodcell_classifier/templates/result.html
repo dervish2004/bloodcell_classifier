@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Result</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: url("{{ url_for('static', filename='images/background.jpg') }}");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-container bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm p-10 md:p-16 rounded-xl shadow-2xl shadow-gray-400/50 text-center transition-all duration-500 ease-in-out">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6 tracking-wide">
+      Prediction: {{ result }}
+    </h2>
+    <div class="relative w-80 h-80 mx-auto mb-8 rounded-xl overflow-hidden shadow-inner shadow-gray-300/50">
+      <img src="{{ image }}" alt="Uploaded Image" class="w-full h-full object-cover border-4 border-gray-300 rounded-xl">
+    </div>
+    <a href="/"
+       class="link-button inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full shadow-md
+              hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+      Predict another
+    </a>
+  </div>
+</body>
+</html>
